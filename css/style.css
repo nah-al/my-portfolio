@@ -56,34 +56,47 @@ button, .btn {
   background-color: var(--nav-bg);
   padding: 1rem;
   color: white;
+  position: relative;
+  z-index: 1000;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
-  color: white;
   position: relative;
-  transition: color 0.3s ease;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .nav-links a::after {
   content: '';
   position: absolute;
+  bottom: -4px;
   left: 0;
-  bottom: -6px;
   width: 100%;
   height: 2px;
-  background: var(--accent-color);
+  background-color: var(--accent-color);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
 }
 
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent-color);
+  text-shadow: 0 0 8px var(--accent-color);
+}
+
 .nav-links a:hover::after,
 .nav-links a.active::after {
   transform: scaleX(1);
-}
-.nav-links a:hover {
-  color: var(--accent-color);
-  text-shadow: 0 0 6px var(--accent-color);
 }
 
 .menu-toggle {
