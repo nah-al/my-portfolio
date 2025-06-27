@@ -32,6 +32,13 @@ a, .accent {
   color: var(--accent-color);
   text-decoration: none;
 }
+.section {
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 h1, h2, h3 {
   color: var(--text-color);
