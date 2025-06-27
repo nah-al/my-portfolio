@@ -5,40 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aman Nahal | Front-End Developer</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
   <header>
     <nav class="navbar">
-      <div class="logo">Aman</div>
+      <div class="logo">Aman.dev</div>
       <div class="menu-toggle" id="menu-toggle">☰</div>
       <ul class="nav-links" id="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
       <button class="toggle-theme" id="theme-toggle">Dark Mode</button>
     </nav>
   </header>
 
-  <main class="hero">
-    <h1>Hi, I'm Aman</h1>
-    <p>A front-end developer building fast, clean, and responsive websites.</p>
-    <a href="projects.html" class="btn">View My Work</a>
-  </main>
+  <main>
+    <section id="home" class="hero section">
+      <h1>Hi, I'm Aman</h1>
+      <p>A front-end developer building clean and responsive web experiences.</p>
+      <a href="#projects" class="btn">View My Work</a>
+    </section>
 
-  <section class="education">
-    <h2>Education</h2>
-    <div class="timeline-item">
-      <h3>Bachelor of Computer Science</h3>
-      <p>University of British Columbia, 2020 – 2024</p>
-    </div>
-    <div class="timeline-item">
-      <h3>High School Diploma</h3>
-      <p>Abbotsford Senior Secondary, 2016 – 2020</p>
-    </div>
-  </section>
+    <section id="about" class="section card">
+      <h2>About Me</h2>
+      <p>I’m a developer based in Vancouver passionate about building web interfaces. I enjoy solving problems, learning new technologies, and creating clean UIs.</p>
+    </section>
+
+    <section id="projects" class="section card">
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>Portfolio Website</strong> – This site you're looking at right now.</li>
+        <li><strong>Mini Task Tracker</strong> – A simple to-do app using localStorage.</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="section card">
+      <h2>Contact</h2>
+      <p>Want to work together or just say hi?</p>
+      <form class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
 
   <footer>
     <p>&copy; 2025 Aman Nahal. All rights reserved.</p>
