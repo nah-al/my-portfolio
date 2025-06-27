@@ -5,13 +5,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.getElementById("nav-links");
   const navItems = document.querySelectorAll(".nav-links a");
   const logo = document.querySelector(".logo");
+  const themeToggle = document.getElementById("theme-toggle");
 
-  // Toggle menu
-  menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-  });
+  // Toggle mobile nav
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  }
 
-  // Close menu on nav link click (mobile UX)
+  // Close nav on link click (mobile)
   navItems.forEach(link => {
     link.addEventListener("click", () => {
       navLinks.classList.remove("active");
@@ -26,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Auto highlight current page link
+  // Highlight current page link
   const currentPage = window.location.pathname.split("/").pop();
   navItems.forEach(link => {
     if (link.getAttribute("href") === currentPage) {
@@ -34,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Typewriter effect for hero heading
+  // Typewriter effect for hero headline
   const text = "Hi, I'm Aman";
   const typeTarget = document.querySelector(".hero h1");
   if (typeTarget) {
@@ -48,5 +51,15 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
     type();
+  }
+
+  // Dark mode toggle
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      themeToggle.textContent = document.body.classList.contains("dark")
+        ? "Light Mode"
+        : "Dark Mode";
+    });
   }
 });
