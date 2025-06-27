@@ -2,55 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Aman Nahal | Front-End Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aman | Front-End Developer</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <header>
-   <nav class="navbar">
-  <div class="logo">Aman.dev</div>
-  <ul class="nav-links" id="nav-links">
-    <li><a href="#home" class="active">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
 
+  <header>
+    <nav class="navbar">
+      <div class="logo">Aman.</div>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
-    <section id="home" class="hero section">
-      <h1>Hi, I'm Aman</h1>
-      <p>A front-end developer building clean and responsive web experiences.</p>
-      <a href="#projects" class="btn">View My Work</a>
+    <section id="home" class="section home-section">
+      <div class="home-content">
+        <h1>Hi, I'm <span class="highlight">Aman</span></h1>
+        <p class="subtitle">Frontend Developer</p>
+        <p class="description">I create clean and modern user interfaces with a touch of animation.</p>
+        <div class="buttons">
+          <a href="#contact" class="btn">Let's Talk</a>
+          <a href="#projects" class="btn-outline">My Work</a>
+        </div>
+      </div>
     </section>
 
-    <section id="about" class="section card">
-      <h2>About Me</h2>
-      <p>I’m a developer based in Vancouver passionate about building web interfaces. I enjoy solving problems, learning new technologies, and creating clean UIs.</p>
+    <section id="about" class="section">
+      <h2>About <span class="highlight">Me</span></h2>
+      <div class="about-content">
+        <img src="images/profile.png" alt="My photo" class="about-image" />
+        <p>I’m a passionate frontend developer based in Vancouver. I build responsive and engaging web interfaces using HTML, CSS, JavaScript, and modern frameworks.</p>
+      </div>
     </section>
 
-    <section id="projects" class="section card">
-      <h2>Projects</h2>
-      <ul>
-        <li><strong>Portfolio Website</strong> – This site you're looking at right now.</li>
-        <li><strong>Mini Task Tracker</strong> – A simple to-do app using localStorage.</li>
-      </ul>
-    </section>
-
-    <section id="contact" class="section card">
-      <h2>Contact</h2>
-      <p>Want to work together or just say hi?</p>
-      <form class="contact-form">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </section>
+    <!-- We'll add education, skills, and contact next -->
   </main>
 
   <footer>
