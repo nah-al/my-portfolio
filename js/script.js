@@ -17,13 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
         section.classList.remove("reveal");
       }
     });
-    });
   };
 
-  window.addEventListener("scroll", revealOnScroll);
-  revealOnScroll();
-
-  // Update active nav link on scroll
+  // Active link update
   const setActiveNav = () => {
     let current = "";
 
@@ -31,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.offsetHeight;
 
-      if (pageYOffset >= sectionTop - sectionHeight / 2) {
+      if (pageYOffset >= sectionTop - sectionHeight / 3) {
         current = section.getAttribute("id");
       }
     });
@@ -44,5 +40,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  window.addEventListener("scroll", setActiveNav);
+  window.addEventListener("scroll", () => {
+    revealOnScroll();
+    setActiveNav();
+  });
+
+  // Trigger both on load
+  revealOnScroll();
+  setActiveNav();
 });
