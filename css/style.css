@@ -64,3 +64,47 @@ header {
 .highlight {
   color: var(--accent-color);
 }
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.timeline-item h3 {
+  color: var(--accent-color);
+  margin-bottom: 0.2rem;
+}
+
+.skills-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.skill span {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.bar {
+  background: #1c2e3f;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  background: var(--accent-color);
+  height: 100%;
+  width: 0;
+  animation: fillBar 1s ease forwards;
+}
+
+@keyframes fillBar {
+  from {
+    width: 0;
+  }
+}
