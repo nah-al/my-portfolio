@@ -1,68 +1,92 @@
 /* style.css */
 
 :root {
-  --bg-color: #0e1a2b;
-  --accent-color: #00bcd4;
-  --text-color: #ffffff;
-  --muted-text: #a0aab8;
-  --section-padding: 4rem 2rem;
-  --border-radius: 12px;
+  --bg: #0f1a24;
+  --section-bg: #14212f;
+  --text: #ffffff;
+  --accent: #00bcd4;
+  --muted: #999999;
+  --nav-bg: #0d1721;
+  --font-main: 'Poppins', sans-serif;
 }
 
-body {
+* {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  padding: 0;
+  box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
-/* NAVBAR */
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Navbar */
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--nav-bg);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: #0a1624;
-  position: sticky;
-  top: 0;
-  z-index: 999;
+  padding: 1.2rem 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-.navbar .logo {
+.logo {
   font-size: 1.5rem;
   font-weight: 700;
+  color: var(--text);
 }
 
 .nav-links {
-  list-style: none;
   display: flex;
-  gap: 2rem;
-  padding-left: 0;
-  margin: 0;
+  list-style: none;
+  gap: 1.8rem;
 }
 
-.nav-links li a {
+.nav-links a {
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--text);
   font-weight: 500;
-  transition: color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
 }
 
-.nav-links li a:hover,
-.nav-links li a.active {
-  color: var(--accent-color);
-  box-shadow: 0 2px 0 var(--accent-color);
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
 }
 
-/* SECTIONS */
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a.active {
+  color: var(--accent);
+}
+
+/* Sections */
 .section {
-  padding: var(--section-padding);
-  max-width: 1000px;
-  margin: auto;
+  padding: 100px 20px;
+  min-height: 100vh;
+  background-color: var(--section-bg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.6s ease-in-out;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
 }
 
 .section.reveal {
@@ -70,182 +94,108 @@ body {
   transform: translateY(0);
 }
 
-h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.highlight {
-  color: var(--accent-color);
-}
-
-/* HOME */
-.home-content {
-  text-align: center;
-  padding-top: 5rem;
-}
-
-.subtitle {
-  font-size: 1.25rem;
+h1, h2, h3 {
   margin-bottom: 1rem;
+  color: var(--text);
 }
 
-.description {
-  color: var(--muted-text);
-  margin-bottom: 2rem;
-  max-width: 600px;
-  margin-inline: auto;
+h2 span.highlight {
+  color: var(--accent);
 }
 
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.btn,
-.btn-outline {
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--border-radius);
+/* Buttons */
+.btn, .btn-outline {
+  padding: 10px 20px;
+  border-radius: 5px;
   font-weight: 600;
+  cursor: pointer;
   text-decoration: none;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .btn {
-  background-color: var(--accent-color);
-  color: #000;
+  background-color: var(--accent);
+  color: var(--text);
+  border: none;
 }
 
 .btn-outline {
-  border: 2px solid var(--accent-color);
-  color: var(--accent-color);
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
 }
 
-.btn:hover {
-  background-color: #00acc1;
-}
-
-.btn-outline:hover {
-  background-color: var(--accent-color);
+.btn:hover, .btn-outline:hover {
+  background-color: var(--accent);
   color: #000;
 }
 
-/* ABOUT */
-.about-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  text-align: center;
-}
-
-.about-image {
-  width: 150px;
-  border-radius: 50%;
-  border: 3px solid var(--accent-color);
-}
-
-/* EDUCATION */
-.timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.timeline-item {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 1rem;
-  border-left: 4px solid var(--accent-color);
-  border-radius: var(--border-radius);
-}
-
-/* SKILLS */
+/* Skills */
 .skills-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
+  max-width: 700px;
+  margin: auto;
 }
 
 .skill {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.skill span {
+  display: block;
+  margin-bottom: 5px;
 }
 
 .bar {
-  background: #1c2b3a;
+  background-color: #333;
   height: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   overflow: hidden;
 }
 
 .bar-fill {
-  background: var(--accent-color);
+  background-color: var(--accent);
   height: 100%;
-  transition: width 1s ease-in-out;
+  transition: width 0.6s ease;
 }
 
-/* CONTACT */
+/* Contact Form */
 .contact-form {
+  max-width: 600px;
+  margin: auto;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  max-width: 600px;
-  margin: auto;
 }
 
 .contact-form input,
 .contact-form textarea {
-  padding: 0.75rem;
+  padding: 12px;
   border: none;
-  border-radius: var(--border-radius);
-  background: #1c2b3a;
-  color: var(--text-color);
+  border-radius: 5px;
+  background-color: #1f2c3b;
+  color: var(--text);
 }
 
 .contact-form button {
-  background: var(--accent-color);
-  color: #000;
-  font-weight: 600;
+  align-self: flex-start;
+  background-color: var(--accent);
+  color: var(--text);
+  padding: 10px 20px;
   border: none;
-  border-radius: var(--border-radius);
-  padding: 0.75rem;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  font-weight: 600;
 }
 
-.contact-form button:hover {
-  background: #00acc1;
-}
-
-/* FOOTER */
 footer {
   text-align: center;
-  padding: 1.5rem;
-  font-size: 0.875rem;
-  color: var(--muted-text);
-  border-top: 1px solid #1c2b3a;
-  background-color: #0a1624;
+  padding: 2rem;
+  font-size: 0.9rem;
+  background-color: var(--nav-bg);
+  color: var(--muted);
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .nav-links {
-    flex-direction: column;
-    width: 100%;
-    gap: 1rem;
-    padding-top: 1rem;
-  }
-  .home-content {
-    padding-top: 3rem;
-  }
-  .skills-container {
-    grid-template-columns: 1fr;
-  }
+/* Home padding fix */
+#home {
+  padding-top: 140px;
 }
