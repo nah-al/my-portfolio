@@ -13,7 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (sectionTop < triggerBottom) {
         section.classList.add("reveal");
+      } else {
+        section.classList.remove("reveal");
       }
+    });
     });
   };
 
